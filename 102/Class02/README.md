@@ -1,5 +1,15 @@
-# README.md
- 
+# Class 2 Notes
+
+The topic for this module help us learn about how to navigate through our computer more fluently. Kind of like taking back roads, slightly faster and more accessible.
+For example such as, creating files, moving them, and removing them.
+It also  allows you increase the speed of the process of opening programs & making automations.
+
+References
+- <https://ryanstutorials.net/linuxtutorial/commandline.php>
+- <https://ryanstutorials.net/linuxtutorial/navigation.php>
+- <https://ryanstutorials.net/linuxtutorial/aboutfiles.php>
+
+## [Lab 2 Assignment](https://github.com/CEEJ987/lab02)
 
 ### The Command Line
 
@@ -57,3 +67,4 @@ Spaces in names can be found if using certain methods:
 ## Things I'm curious to know more about
 
 I want to find out more about the opening program side of command lines & how to organize files more efficiently.
+

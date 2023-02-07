@@ -1,0 +1,1 @@
+# Today we downloaded essential components to help setup our computer.

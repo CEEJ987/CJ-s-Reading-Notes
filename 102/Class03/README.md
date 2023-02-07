@@ -12,11 +12,11 @@
 
 ## Notes
 
-**Version control** is being able to go back to the past versions of any program(s) in order to fix things or revert them.
+- **Version control** is being able to go back to the past versions of any program(s) in order to fix things or revert them.
 
-**Local Version Control** **(LVC)** is the same way, just for the local.
-**Centralized Version Control** **(CVC)** is the collaboration between others where all versions are stored on a server database.
-**Distributed Version Control** **(DVCS)** is a duplicated repository, a backup, which can be implemented into the CVS to update it if its necessary. 
+- **Local Version Control** **(LVC)** is the same way, just for the local.
+- **Centralized Version Control** **(CVC)** is the collaboration between others where all versions are stored on a server database.
+- **Distributed Version Control** **(DVCS)** is a duplicated repository, a backup, which can be implemented into the CVS to update it if its necessary. 
 
 ### Git
 **Git** is a DVCS, which stores files in data as snapshots, once changes are made you can **commit to change**. If the file has not changed, Git only stores a reference to the already-stored identical version of it. 
