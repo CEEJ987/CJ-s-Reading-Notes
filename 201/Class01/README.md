@@ -16,7 +16,7 @@
 - **HTTP**- (HyperText Transfer Protocol) is an application protocol that defines a language for clients and servers to speak to each other.
 - **Component Files**- A website is made up of many different files (Ex. Parts of goods at the store) 
   1. **Code Files**- Websites are built primarily from HTML, CSS, and JavaScript
-  2. **Aassets**- THis is a collective name for all the other stuff that makes up a  website (Ex. Images, video, word document,and pdf's)
+  2. **Assets**- THis is a collective name for all the other stuff that makes up a  website (Ex. Images, video, word document,and pdf's)
 
   ## What happens exactly!!
 
