@@ -65,9 +65,15 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Content_categories#metadata_co
 
 7. Compose a short poem describing how HTTP sends data between computers.
 
+Hypertext transfer Protocol
+Sends communication between browsers and servers.
+At your request or a call
+The documents fetched recontructed for sharers.
+
+
 8. Describe how HTML, CSS, and JS files are parsed in the browser.
 
-- The browser parses the HTML file first, and that leads to the browser recognizing any <link>-element references to external CSS stylesheets and any <script>-element references to scripts.
+- The browser parses the HTML file first, and that leads to the browser recognizing any <link> element references to external CSS stylesheets and any <script>-element references to scripts.
 
 - As the browser parses the HTML, it sends requests back to the server for any CSS files it has found from <link> elements, and any JavaScript files it has found from <script> elements, and from those, then parses the CSS and JavaScript.
 
@@ -82,4 +88,8 @@ You can use your browser to find an img. also you can use the <img> tag insert i
 <string> you surrond the unicode characters with single or double qoutes.
 <number> you follow the data with decimal digits.
 
-11. What is a <variable> and why are they important in JavaScrit?
+11. What is a <variable> and why are they important in JavaScript?
+Variable are important because the they give JavaScript something to refer to for a proper response.
+Variables are letters, numbers or words that symbolize a previous meaning. 
+
+

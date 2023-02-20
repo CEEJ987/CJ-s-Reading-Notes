@@ -45,3 +45,4 @@ For slideshows         <link href="style.css" rel="stylesheet"/>
 - You can use google color picker to get specific "HEX" "RGB" color numbers
  ## What i want to learn more about?
  How to design web pages with animations.
+>>>>>>> 565a2da72091bf377ab683a75ed83be0dba5847e

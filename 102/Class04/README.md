@@ -92,4 +92,8 @@ HTML is comprised of several kinds of content, each of which is allowed to be us
 
 ### Related topics
 Applying color to HTML elements using CSS
+<<<<<<< HEAD
 This article covers most of the ways you use CSS to add color to HTML content, listing what parts of HTML documents can be colored and what CSS properties to use when doing so. Includes examples, links to palette-building tools, and more.
+=======
+This article covers most of the ways you use CSS to add color to HTML content, listing what parts of HTML documents can be colored and what CSS properties to use when doing so. Includes examples, links to palette-building tools, and more.
+>>>>>>> 565a2da72091bf377ab683a75ed83be0dba5847e

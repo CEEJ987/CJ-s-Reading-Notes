@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Class06 Reading-Notes
 
 # JavaScript
@@ -96,3 +97,6 @@ x, y, and z are Considered as variables. Used as containers to store data.
 ### Things I want to know about JavaScript 
 
 
+=======
+file:///C:/Users/carne/Documents/Carl%20Sanders%20HW/102-Class04/index.html
+>>>>>>> 565a2da72091bf377ab683a75ed83be0dba5847e
