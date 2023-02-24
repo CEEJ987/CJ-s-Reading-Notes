@@ -1,99 +1,64 @@
-# Reading-Notes Class 03
+# Class 04 Notes
 
-## Morre in HTML, CSS, and JavaScirpt
+## Learning about HTML
 
-### Questions to answer about HTML
+### More questions
 
-1. When should you use and unordered list?
+1. To create a basic link, we wrap text or other content inside what element?
 
-- When you would like a bullet style list
+With <a> tags
 
-2. How do you change the bullet style of unordered list items?
+2. The href attribute contains what information?
 
-- ul.a {
-  list-style-type: circle;
-}
+Links for CSS or JavaScript ,etc
 
-ul.b {
-  list-style-type: square;
-}
+3. What are some ways we can ensure links on our pages are accessible to all readers?
 
-ol.c {
-  list-style-type: upper-roman;
-}
 
-ol.d {
-  list-style-type: lower-alpha;
-}
+## Reference Links
 
-3. When should you use and <ol> vs <ul> in your HTML document?
+- https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks
+- https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals
+- https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started
 
-Use <ol> when you want to list in chronlogical steps. 
-Use <ul> when you want a bullet marker style list.
+## CSS Layout
 
-4. Describe two ways you can change the numbers on the list items in an ordered list?
+### More questions about CSS
 
-<ol start="3"> Means you are starting at line number 3. 
-<ol type="i"> Means you've changed the marker from numbers to I's.
+1. What is meant by “normal flow”?
 
-### Reference Links
+2. What are a few differences between block-level and inline elements?
 
-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol
-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
 
-## CSS
+3. ___ positioning is the default for every html element.
 
-### Questions to answer about CSS
+Static
 
-1. Describe the CSS properties of <margin> & <padding> as characters in a story. What is there role in story titled: The Box Model.
+4. Name a few advantages to using absolute positioning on an element.
 
-They are like interior decorators the are customized to your liking. From positioning to cushioning.
+We can create isolated UI features that don't interfere with the layout of other elements on the page.
+We can create control menu's, pop-up boxes. 
 
-2. List the four parts of an HTML elements as reffered to by the box model.
+5. What is a key difference between fixed positioning and absolute positioning?
+ 
+For absolute is tied closer to the pre-element and you can set it where you want it to be. 
+For fixed is already set up.
 
-Content is the stuffing in the pillow
-Bordering is the pillow casing and the fluffiness of it.
-Padding is the spacing between each pillow
-Margin is the cushioning from from it all.
 
 ### Reference Links
 
-- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model
+- 
+- 
+- 
 
-## JavaScript
+## JS
 
-1. What data types are can you store inside of an <arr> array?
+1. Describe the difference between a function declaration and a function invocation.
 
-<strings>, <numbers>, <objects>
+Declaring a function is setting up the function.
+Invocating a function calling.
 
-2. Is the people array a valid JavaScript array? If so, how can I access the values stored? If not, why?
+2. What is the difference between a parameter and an argument?
 
-Yes, can access it through brackets and supplying the item's index
-
-3. List five shorthand operators for assignment in JavaScript and describe what they do?
-
-- *= Multiplcation operator
-- -= Subtraction operator
-- /= Division operator
-- += Addition operator
-- %= Remainder operator
-
-4. Read the code below and evaluate the last expression and explain what the result would be and why.
-
-- it results 10dog because false isn't a value.
-
-5. Describe a real world example of when a conditional statement should be used in a JavaScript program.
-
-- if...else statments. These are used incase a question or form requirements are incorrect or aren't met.
-
-6. Give an example of when a Loop is useful in JavaScript.
-
-- When a feature on your site is needed to be repeated or taken multiple times.
-
-### Reference Links
-
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators
-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_cod
+Nothing
 
