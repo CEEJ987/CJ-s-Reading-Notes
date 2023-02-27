@@ -60,17 +60,54 @@ if (q6 > 2014 ) {
 }
 
 let answer = ["Dedication", "Understanding", "Determination", "Motivation", "Preparation", "Participation"];
-let q7 = [];// prompt("7. What characteristics are shown in growth and adaptation?")
+let q7 = []; // prompt("7. What characteristics are shown in growth and adaptation?")
     
-for(let i = 0; <= 6; i++) {
+for (let i = 0; i < 6; i++) {
       q7.push(prompt("What characteristics are shown in growth and adaptation?"));
-      
 
-    }
+}
     console.log(q7);
-
-
+    let correct = false; 
+    //loop through user answers
+    for (let j = 0; i < q7.length; i++) {
+      //check each user answer against the correct answers
+      for (let j = 0; j < answers.length; j++) {
+        if (q7[i] == answers[j]) {
+          correct = true;
+          break;
+        } else if (q7[i] != answers[j]) {
+          correct = false;
+        }
+      }
     
+//Respond with correctness
+if (correct) {
+  alert(q7[i] + "Was Correct!");
+  //break;
+} 
+else {
+  alert(q7[i] + "Was not correct");
+
+}
+  
     
+//check if next answer was right
+}
+
+const q7 = ['Dedication', 'Understanding', 'Determination', 'Motivation', 'preparation', 'Particpation'];
+
+let growth = 'Growth and Adaptation is';
+
+for (let i = 0; i < answers.length; i++) {
+  if (i === answers.length - 1) {   // We are at the end of the array
+    Growth += `and ${q7[i]}.`
+  } else {
+    Growth += `${q7[i]}, `
+  }
+}
+
+console.log(growth);     
+// "Growth and adaptation is Dedication, Understanding, Determination, Motivation, Preparation, Participation."
+
 
 }

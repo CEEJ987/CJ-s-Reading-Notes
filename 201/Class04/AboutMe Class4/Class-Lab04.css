@@ -1,0 +1,45 @@
+h1 {
+    color: green;
+    font-size: 100px;
+    position: center;
+    text-align: center;
+
+
+}
+h2 {
+    color:rgb(39, 226, 164);
+}
+h3 {
+    color:gold;
+    font-style: initial;
+    font-size: x-large;
+    
+}
+h4 {
+    color: rgb(39, 226, 164);
+    font-stretch: expanded;
+    font-size: xx-large;
+}
+
+body {
+    background-color: rgb(4, 44, 31);
+    background-image: linear-gradient(to right, rgb(32, 104, 80), rgb(5, 55, 31));
+    
+}
+p {
+    color: azure;
+    
+}
+.firstp {
+    font-style: italic;
+    font-size: xx-large;
+}
+
+ul {
+    color: gold;
+
+}
+
+button {
+    color:brown;
+}

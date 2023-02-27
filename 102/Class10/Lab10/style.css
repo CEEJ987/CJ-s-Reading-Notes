@@ -1,0 +1,87 @@
+* 
+{
+    padding: 0%;
+    margin: 0 ;
+}
+.menu-bar 
+{
+    background: rgb(51, 44, 44);
+    
+
+    
+}
+
+
+
+
+
+ body {
+    color: white;
+    font-size: larger;
+    font-style: italic;
+    font-stretch: expanded;
+    font-weight: 100;
+    font-family: cursive;
+    background-image: url(https://cdn.wallpapersafari.com/39/96/UcMs7D.jpg); 
+    background-size: auto;
+    background-clip: unset;
+    background-blend-mode: normal;
+    
+
+
+}
+
+
+
+ .box {
+border-style: solid;
+border-width: 1px;
+display: block;
+width: 100px;
+height: 100px;
+background-color: #006eff;
+transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+
+.box:hover {
+background-color: #1022c2;
+width: 100px;
+height: 200px;
+rotate: 180deg;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+}
+
+h3{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* text-align: center; */
+}
+
+menu,
+ul {
+  display: flex;
+  list-style: none;
+  padding: 500;
+  width: 1000px;
+}
+
+li {
+  flex-grow: 1;
+}
+
+button {
+  width: 70%;
+}
+
+ 
+
+
+
+ 
+
