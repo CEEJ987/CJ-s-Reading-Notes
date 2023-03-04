@@ -1,11 +1,11 @@
-'use strict'
-//random function between max and min input
-function getRandom(max, min) {
+ 'use strict'
+ //random function between max and min input
+ function getRandom(max, min) {
     return Math.ceil(Math.random() * (max - min) + min);
     // 0 >= random #  <= 1  * limit
-}
+ }
 
-const seattle = {
+ const seattle = {
     min: 23,
     max: 65,
     avg: 6.3,
@@ -26,7 +26,7 @@ const seattle = {
         return this.cookiesPerHour;
     },
     
-getCookiesoutput: function(){
+ getCookiesoutput: function(){
     let SeattlehoursArray = document.querySelector('.SeattleCookies')
     this.getCookies()
         for(let i = 0; i < seattle.hoursOfOperation.length; i++) {
@@ -36,17 +36,17 @@ getCookiesoutput: function(){
         SeattlehoursArray.append(SeattleCookies);
     }
 
-}
-}
-seattle.getCookiesoutput ()
+ }
+ }
+ seattle.getCookiesoutput ()
 
 
-function getRandom(max, min) {
+ function getRandom(max, min) {
     return Math.ceil(Math.random() * (max - min) + min);
     // 0 >= random #  <= 1  * limit
-}
+ }
 
-const Tokyo = {
+ const Tokyo = {
     min: 2,
     max: 24,
     avg: 1.2,
@@ -67,7 +67,7 @@ const Tokyo = {
         return this.cookiesPerHour;
     },
     
-getCookiesoutput: function(){
+ getCookiesoutput: function(){
     let TokyohoursArray = document.querySelector('.TokyoCookies')
     this.getCookies()
         for(let i = 0; i < Tokyo.hoursOfOperation.length; i++) {
@@ -77,16 +77,16 @@ getCookiesoutput: function(){
         TokyohoursArray.append(TokyoCookies);
     }
 
-}
-}
-Tokyo.getCookiesoutput ()
+ }
+ }
+ Tokyo.getCookiesoutput ()
 
-function getRandom(max, min) {
+ function getRandom(max, min) {
     return Math.ceil(Math.random() * (max - min) + min);
     // 0 >= random #  <= 1  * limit
-}
+ }
 
-const Dubai = {
+ const Dubai = {
     min: 2,
     max: 24,
     avg: 1.2,
@@ -107,7 +107,7 @@ const Dubai = {
         return this.cookiesPerHour;
     },
     
-getCookiesoutput: function(){
+ getCookiesoutput: function(){
     let DubaihoursArray = document.querySelector('.DubaiCookies')
     this.getCookies()
         for(let i = 0; i < Dubai.hoursOfOperation.length; i++) {
@@ -117,16 +117,16 @@ getCookiesoutput: function(){
         DubaihoursArray.append(DubaiCookies);
     }
 
-}
-}
-Dubai.getCookiesoutput ()
+ }
+ }
+ Dubai.getCookiesoutput ()
 
-function getRandom(max, min) {
+ function getRandom(max, min) {
     return Math.ceil(Math.random() * (max - min) + min);
     // 0 >= random #  <= 1  * limit
-}
+ }
 
-const Paris = {
+ const Paris = {
     min: 2,
     max: 24,
     avg: 1.2,
@@ -147,7 +147,7 @@ const Paris = {
         return this.cookiesPerHour;
     },
     
-getCookiesoutput: function(){
+ getCookiesoutput: function() {
     let ParishoursArray = document.querySelector('.ParisCookies')
     this.getCookies()
         for(let i = 0; i < Paris.hoursOfOperation.length; i++) {
@@ -157,17 +157,17 @@ getCookiesoutput: function(){
         ParishoursArray.append(ParisCookies);
     }
 
-}
-}
-Paris.getCookiesoutput ()
+ }
+ }
+ Paris.getCookiesoutput ()
 
 
-function getRandom(max, min) {
+ function getRandom(max, min) {
     return Math.ceil(Math.random() * (max - min) + min);
-    // 0 >= random #  <= 1  * limit
-}
+    // 0 >= random #  <= 1  * limit 
+ }
 
-const Lima = {
+ const Lima = {
     min: 2,
     max: 24,
     avg: 1.2,
@@ -188,7 +188,7 @@ const Lima = {
         return this.cookiesPerHour;
     },
     
-getCookiesoutput: function(){
+ getCookiesoutput: function() {
     let LimahoursArray = document.querySelector('.LimaCookies')
     this.getCookies()
         for(let i = 0; i < Lima.hoursOfOperation.length; i++) {
@@ -198,10 +198,59 @@ getCookiesoutput: function(){
         LimahoursArray.append(LimaCookies);
     }
 
-}
-}
-Lima.getCookiesoutput ()
+ } 
+ }
+ Lima.getCookiesoutput ()
 
+ function cookieStandLocation(min, max, avg, location, hours) {
+    let stand = {};
+    stand.min = min;
+    stand.max = max;
+    stand.avg = avg;
+    stand.location = location;
+    stand.cookiesPerHour = [];
+    
+    stand.hoursOfOperation = hours;
+ 
+     stand.getCustomers = function() {
+     //console.log(`Stand Max: ${stand.max} || this Max: ${this.max}`);
+     return getRandom(this.max, this.min);
+    }
+ 
+     stand.getCookies = function getCookies() {
+         for(let i = 0; i < this.hoursOfOperation.length; i++) {
+             // console.log('seattle avg cookies/sale', this.avg);
+             // console.log('seattle avg customers/hour', this.customersPerHour());
+             this.cookiesPerHour.push(Math.ceil(this.avg * this.getCustomers()));
+         }
+         return this.cookiesPerHour;
+     }
+ 
+     stand.render = function() {
+     // let tblDemo = document.createElement('table');
+     // let trArr = [];
+     let trDemo = document.createElement('tr'); 
+     let localeTD = document.createElement('td');
+     localeTD.innerHTML = this.location;
+     trDemo.append(localeTD);
+ 
+     for (let i = 0; i < this.hoursOfOperation.length; i++) {
+         let tdDemo = document.createElement('td');
+         tdDemo.innerHTML = this.cookiesPerHour[i];
+         trDemo.append(tdDemo);
+     }
+     document.getElementById('jsTbl').append(trDemo);
+    }
+ 
+    return stand;
+ }
+ 
+ const Seattle = cookieStandLocation(23, 65, 6.3, 'Seattle', hoursDemo);
+ seattle.getCustomers();
+ seattle.getCookies();
+ const tokyo = cookieStandLocation(3, 24, 1.2, 'Tokyo', hoursDemo)
+ tokyo.getCustomers();
+ tokyo.getCookies();
 
 
 
