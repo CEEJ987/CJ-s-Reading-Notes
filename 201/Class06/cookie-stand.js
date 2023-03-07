@@ -2,8 +2,9 @@
  //random function between max and min input
  function getRandom(max, min) {
     return Math.ceil(Math.random() * (max - min) + min);
-    // 0 >= random #  <= 1  * limit
  }
+    // 0 >= random #  <= 1  * limit
+/* }
 
  const seattle = {
     min: 23,
@@ -192,7 +193,7 @@
     let LimahoursArray = document.querySelector('.LimaCookies')
     this.getCookies()
         for(let i = 0; i < Lima.hoursOfOperation.length; i++) {
-        //hoursDemo[i].innerHTML
+        hoursDemo[i].innerHTML
         let LimaCookies = document.createElement("li");
         LimaCookies.innerHTML = `${Lima.hoursOfOperation[i]}: ${Lima.cookiesPerHour[i]} cookies`;
         LimahoursArray.append(LimaCookies);
@@ -200,7 +201,7 @@
 
  } 
  }
- Lima.getCookiesoutput ()
+ Lima.getCookiesoutput ()*/
 
  function cookieStandLocation(min, max, avg, location, hours) {
     let stand = {};
@@ -213,24 +214,25 @@
     stand.hoursOfOperation = hours;
  
      stand.getCustomers = function() {
-     //console.log(`Stand Max: ${stand.max} || this Max: ${this.max}`);
+     console.log(`Stand Max: ${stand.max} || this Max: ${this.max}`);
      return getRandom(this.max, this.min);
     }
  
      stand.getCookies = function getCookies() {
          for(let i = 0; i < this.hoursOfOperation.length; i++) {
-             // console.log('seattle avg cookies/sale', this.avg);
-             // console.log('seattle avg customers/hour', this.customersPerHour());
+              console.log('seattle avg cookies/sale', this.avg);
+              console.log('seattle avg customers/hour', this.customersPerHour());
              this.cookiesPerHour.push(Math.ceil(this.avg * this.getCustomers()));
          }
          return this.cookiesPerHour;
-     }
+    }
  
      stand.render = function() {
      // let tblDemo = document.createElement('table');
      // let trArr = [];
      let trDemo = document.createElement('tr'); 
      let localeTD = document.createElement('td');
+
      localeTD.innerHTML = this.location;
      trDemo.append(localeTD);
  
@@ -240,14 +242,31 @@
          trDemo.append(tdDemo);
      }
      document.getElementById('jsTbl').append(trDemo);
-    }
+     }
  
-    return stand;
+     return stand;
  }
+ let hoursDemo = [
+    "6am",
+    "7am",
+    "8am",
+    "9am",
+    "10am",
+    "11am",
+    "12pm",
+    "1pm",
+    "2pm",
+    "3pm",
+    "4pm",
+    "5pm",
+    "6pm",
+    "7pm",
+ ];
+ const Seattle = new cookieStandLocation(23, 65, 6.3, 'Seattle', hoursDemo);
+ Seattle.render(); 
  
- const Seattle = cookieStandLocation(23, 65, 6.3, 'Seattle', hoursDemo);
- seattle.getCustomers();
- seattle.getCookies();
+
+ 
  const tokyo = cookieStandLocation(3, 24, 1.2, 'Tokyo', hoursDemo)
  tokyo.getCustomers();
  tokyo.getCookies();
