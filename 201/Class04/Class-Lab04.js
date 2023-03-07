@@ -94,7 +94,7 @@ else {
 //check if next answer was right
 }
 
-const q7 = ['Dedication', 'Understanding', 'Determination', 'Motivation', 'preparation', 'Particpation'];
+const q7a = ['Dedication', 'Understanding', 'Determination', 'Motivation', 'preparation', 'Particpation'];
 
 let growth = 'Growth and Adaptation is';
 
