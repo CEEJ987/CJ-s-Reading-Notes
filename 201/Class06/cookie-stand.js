@@ -48,7 +48,7 @@
  }
 
  const Tokyo = {
-    min: 2,
+    min: 3,
     max: 24,
     avg: 1.2,
     location: 'Tokyo',
@@ -88,9 +88,9 @@
  }
 
  const Dubai = {
-    min: 2,
-    max: 24,
-    avg: 1.2,
+    min: 11,
+    max: 38,
+    avg: 3.7,
     location: 'Dubai',
     hoursOfOperation: ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"],
     customersPerHour: function() {
@@ -128,9 +128,9 @@
  }
 
  const Paris = {
-    min: 2,
-    max: 24,
-    avg: 1.2,
+    min: 20,
+    max: 38,
+    avg: 2.3,
     location: 'Paris',
     hoursOfOperation: ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"],
     customersPerHour: function() {
@@ -170,8 +170,8 @@
 
  const Lima = {
     min: 2,
-    max: 24,
-    avg: 1.2,
+    max: 16,
+    avg: 4.6,
     location: 'Lima',
     hoursOfOperation: ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"],
     customersPerHour: function() {
@@ -217,11 +217,11 @@
      console.log(`Stand Max: ${stand.max} || this Max: ${this.max}`);
      return getRandom(this.max, this.min);
     }
+
  
      stand.getCookies = function getCookies() {
          for(let i = 0; i < this.hoursOfOperation.length; i++) {
               console.log('seattle avg cookies/sale', this.avg);
-              console.log('seattle avg customers/hour', this.customersPerHour());
              this.cookiesPerHour.push(Math.ceil(this.avg * this.getCustomers()));
          }
          return this.cookiesPerHour;
@@ -237,6 +237,8 @@
      trDemo.append(localeTD);
  
      for (let i = 0; i < this.hoursOfOperation.length; i++) {
+        console.log (this.cookiesPerHour[i])
+        console.log (this)
          let tdDemo = document.createElement('td');
          tdDemo.innerHTML = this.cookiesPerHour[i];
          trDemo.append(tdDemo);
@@ -262,14 +264,27 @@
     "6pm",
     "7pm",
  ];
+ 
  const Seattle = new cookieStandLocation(23, 65, 6.3, 'Seattle', hoursDemo);
+ Seattle.getCookies();
  Seattle.render(); 
  
-
- 
- const tokyo = cookieStandLocation(3, 24, 1.2, 'Tokyo', hoursDemo)
- tokyo.getCustomers();
+ const tokyo = cookieStandLocation(3, 24, 1.2, 'Tokyo', hoursDemo);
  tokyo.getCookies();
+ tokyo.render();
+
+ const Dubai = cookieStandLocation(11, 38, 3.7, 'Dubai', hoursDemo);
+ Dubai.getCookies();
+ Dubai.render();
+
+ const Paris = cookieStandLocation(20, 38, 2.3, 'Paris', hoursDemo);
+ Paris.getCookies();
+ Paris.render();
+
+ const Lima = cookieStandLocation(2, 16, 4.6, 'Lima', hoursDemo);
+ Lima.getCookies();
+ Lima.render();
+ 
 
 
 
