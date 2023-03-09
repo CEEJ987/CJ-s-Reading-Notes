@@ -14,22 +14,44 @@
 
 @keyframes drown {
     0% {
-        left: 25%;
+        left: 0%;
     }
 
     25% {
-        left: 50%;
+        left: 25%;
     }
 
     50% {
-        left: 75%;
+        left: 50%;
     }
 
     75% {
-        left: 100%;
+        left: 75%;
     }
     100% {
-        left: 0%;
+        left: 100%;
     }
 }
 
+.menu-bar {
+    display: flex; 
+    justify-content: space-between;
+    background-attachment: fixed;
+    margin: fixed;
+    padding: 1%;
+    background-color: rgb(4, 17, 88);
+}
+
+.text {
+    column-count: 2;
+    column-gap: 30px;
+    columns: 2;
+    font-size: x-large;
+    margin: auto;
+
+}
+
+body {
+    border-image: url("cartoon-style-bart-simpson-character-african-dreadlocks-cartoon-style-bart-simpson-character-african-dreadlocks-252015227.jpg");
+
+}
