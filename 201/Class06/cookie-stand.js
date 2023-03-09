@@ -244,10 +244,22 @@
          trDemo.append(tdDemo);
      }
      document.getElementById('jsTbl').append(trDemo);
+     let totals = 0; 
+     for (let i = 0; i < this.hoursOfOperation.length; i++) {
+        totals = this.cookiesPerHour [i] + totals
+     }
+     
+     let tdtotals = document.createElement('td')
+     tdtotals.innerHTML = totals 
+     trDemo.append(tdtotals)
+     document.getElementById('jsTbl').append(trDemo);
+     console.log (this.tdtotals)
+
      }
  
      return stand;
  }
+
  let hoursDemo = [
     "6am",
     "7am",
@@ -265,7 +277,7 @@
     "7pm",
  ];
  
- const Seattle = new cookieStandLocation(23, 65, 6.3, 'Seattle', hoursDemo);
+ const Seattle = cookieStandLocation(23, 65, 6.3, 'Seattle', hoursDemo);
  Seattle.getCookies();
  Seattle.render(); 
  
@@ -285,6 +297,26 @@
  Lima.getCookies();
  Lima.render();
  
+
+ let trow = document.createElement('tr');
+ let hourlytotals = [];
+ //let tfoot = document.createElement('tfoot')
+ let hourlytotalstext = document.createElement('td')
+ hourlytotalstext.innerHTML = "Totals";
+ trow.insertBefore(hourlytotalstext, trow.firstChild);
+ for (let i = 0; i < hoursDemo.length; i++) {
+    let storetotals = Seattle.cookiesPerHour[i] + tokyo.cookiesPerHour[i] + Dubai.cookiesPerHour[i] + Paris.cookiesPerHour[i] + Lima.cookiesPerHour[i];
+    hourlytotals.push(storetotals)
+    let tdtotals = document.createElement('td')
+    tdtotals.innerHTML = storetotals
+    trow.append(tdtotals)
+ }
+ let table = document.getElementById('jsTbl') 
+ //tfoot.append(trow)
+ //table.append(tfoot)
+ table.append(trow)
+ 
+console.log (hourlytotals)
 
 
 
