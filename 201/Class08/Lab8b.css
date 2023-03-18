@@ -55,3 +55,10 @@ body {
     border-image: url("cartoon-style-bart-simpson-character-african-dreadlocks-cartoon-style-bart-simpson-character-african-dreadlocks-252015227.jpg");
 
 }
+a {
+    color: rgb(242, 242, 247);
+
+}
+a:hover {
+    color: rgb(170, 196, 22);
+}

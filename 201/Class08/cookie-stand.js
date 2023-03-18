@@ -202,7 +202,7 @@
  } 
  }
  Lima.getCookiesoutput ()*/
-
+ let locations = [];
  function cookieStandLocation(min, max, avg, location, hours) {
     let stand = {};
     stand.min = min;
@@ -280,32 +280,50 @@
  const Seattle = cookieStandLocation(23, 65, 6.3, 'Seattle', hoursDemo);
  Seattle.getCookies();
  Seattle.render(); 
+ locations.push(Seattle);
  
  const tokyo = cookieStandLocation(3, 24, 1.2, 'Tokyo', hoursDemo);
  tokyo.getCookies();
  tokyo.render();
+ locations.push(tokyo);
 
  const Dubai = cookieStandLocation(11, 38, 3.7, 'Dubai', hoursDemo);
  Dubai.getCookies();
  Dubai.render();
+ locations.push(Dubai);
 
  const Paris = cookieStandLocation(20, 38, 2.3, 'Paris', hoursDemo);
  Paris.getCookies();
  Paris.render();
+ locations.push(Paris);
 
  const Lima = cookieStandLocation(2, 16, 4.6, 'Lima', hoursDemo);
  Lima.getCookies();
  Lima.render();
+ locations.push(Lima);
  
-
+ 
+ function totals () {
  let trow = document.createElement('tr');
- let hourlytotals = [];
+ let hourlytotals = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+ let storetotals = [];
+ for (let i = 0; i < locations.length; i++) {
+    console.log(`${i} is ${locations[i].location}`)
+    storetotals.push(0)
+    for (let j = 0; j < locations[i].cookiesPerHour.length; j++){
+        console.log(locations[i].cookiesPerHour[j]);
+        storetotals[i] += locations[i].cookiesPerHour[j];
+        hourlytotals[j] += locations[i].cookiesPerHour[j];
+    }
+ }
+ console.log(hourlytotals);
+
  //let tfoot = document.createElement('tfoot')
  let hourlytotalstext = document.createElement('td')
  hourlytotalstext.innerHTML = "Totals";
  trow.insertBefore(hourlytotalstext, trow.firstChild);
- for (let i = 0; i < hoursDemo.length; i++) {
-    let storetotals = Seattle.cookiesPerHour[i] + tokyo.cookiesPerHour[i] + Dubai.cookiesPerHour[i] + Paris.cookiesPerHour[i] + Lima.cookiesPerHour[i];
+ for (let i = 0; i < locations.length; i++) {
+    let storetotals = locations[i]
     hourlytotals.push(storetotals)
     let tdtotals = document.createElement('td')
     tdtotals.innerHTML = storetotals
@@ -315,10 +333,35 @@
  //tfoot.append(trow)
  //table.append(tfoot)
  table.append(trow)
+ console.log (hourlytotals)
  
-console.log (hourlytotals)
+}
+
+const AddLocation = document.getElementById('AddLocation');
 
 
+AddLocation.addEventListener('submit',
+  function (event) {
+    event.preventDefault();
+    const AddNew = event.target.AddNew.value;
+    const Avg = event.target.Avg.value;
+    const Min = event.target.Min.value;
+    const Max = event.target.Max.value;
+
+    let NewLocation = cookieStandLocation(Min, Max, Avg, AddNew, hoursDemo);
+    console.log(NewLocation.min)
+    NewLocation.getCookies();
+    NewLocation.render();
+    AddLocation.reset();
+    locations.push(NewLocation);
+    totals();
+    
+    
+   
+ 
+  })
+  
+  
 
 
 
