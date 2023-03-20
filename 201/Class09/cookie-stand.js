@@ -303,76 +303,59 @@
  locations.push(Lima);
  
  
- function totals () {
- let trow = document.createElement('tr');
- let hourlytotals = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
- let storetotals = [];
- for (let i = 0; i < locations.length; i++) {
-    console.log(`${i} is ${locations[i].location}`)
-    storetotals.push(0)
-    for (let j = 0; j < locations[i].cookiesPerHour.length; j++){
-        console.log(locations[i].cookiesPerHour[j]);
-        storetotals[i] += locations[i].cookiesPerHour[j];
-        hourlytotals[j] += locations[i].cookiesPerHour[j];
-    }
- }
- console.log(hourlytotals);
+let trow = document.createElement('tr');
+let hourlytotals = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+let storetotals = [];
 
- //let tfoot = document.createElement('tfoot')
- let hourlytotalstext = document.createElement('td')
- hourlytotalstext.innerHTML = "Totals";
- trow.insertBefore(hourlytotalstext, trow.firstChild);
- for (let i = 0; i < locations.length; i++) {
-    let storetotals = locations[i]
-    hourlytotals.push(storetotals)
-    let tdtotals = document.createElement('td')
-    tdtotals.innerHTML = storetotals
-    trow.append(tdtotals)
- }
- let table = document.getElementById('jsTbl') 
- //tfoot.append(trow)
- //table.append(tfoot)
- table.append(trow)
- console.log (hourlytotals)
- 
+// Create table cells for the hourly totals row
+let hourlytotalstext = document.createElement('td');
+hourlytotalstext.innerHTML = "Totals";
+trow.insertBefore(hourlytotalstext, trow.firstChild);
+for (let i = 0; i < hoursDemo.length; i++) {
+  let tdtotals = document.createElement('td');
+  tdtotals.innerHTML = hourlytotals[i];
+  trow.append(tdtotals);
 }
 
-const AddLocation = document.getElementById('AddLocation');
+// Append the row to the table
+let table = document.getElementById('jsTbl');
+table.append(trow);
 
+function updateTotals() {
+  // Reset the hourly totals array and store totals array
+  let hourlytotals = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+  let storetotals = [];
 
-AddLocation.addEventListener('submit',
-  function (event) {
-    event.preventDefault();
-    const AddNew = event.target.AddNew.value;
-    const Avg = event.target.Avg.value;
-    const Min = event.target.Min.value;
-    const Max = event.target.Max.value;
+  // Update the store totals and hourly totals arrays
+  for (let i = 0; i < locations.length; i++) {
+    storetotals.push(0);
+    for (let j = 0; j < locations[i].cookiesPerHour.length; j++){
+      storetotals[i] += locations[i].cookiesPerHour[j];
+      hourlytotals[j] += locations[i].cookiesPerHour[j];
+    }
+  }
 
-    let NewLocation = cookieStandLocation(Min, Max, Avg, AddNew, hoursDemo);
-    console.log(NewLocation.min)
-    NewLocation.getCookies();
-    NewLocation.render();
-    AddLocation.reset();
-    locations.push(NewLocation);
-    totals();
-    
-    
-   
- 
-  })
-  
-  
+  // Update the table with the new totals
+  for (let i = 0; i < hoursDemo.length; i++) {
+    let tdtotals = trow.children[i+1];
+    tdtotals.innerHTML = hourlytotals[i];
+  }
+}
 
+// Call the updateTotals() function each time a new location is added
+AddLocation.addEventListener('submit', function (event) {
+  event.preventDefault();
+  const AddNew = event.target.AddNew.value;
+  const Avg = event.target.Avg.value;
+  const Min = event.target.Min.value;
+  const Max = event.target.Max.value;
 
-
-
-
-
-
-
-
-
-
-
-
-
+  let NewLocation = cookieStandLocation(Min, Max, Avg, AddNew, hoursDemo);
+  console.log(NewLocation.min)
+  NewLocation.getCookies();
+  NewLocation.render();
+  AddLocation.reset();
+  locations.push(NewLocation);
+  updateTotals();
+  AddLocation.append(updateTotals);
+});
