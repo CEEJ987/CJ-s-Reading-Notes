@@ -13,8 +13,8 @@
     <div class= "menu-bar"> 
         
         <a href="./cookie-stand.html">Shop</a>   
-        <a href="./cookie-stand.html">Sales</a> 
-        <a href="Lab08.html">Home</a>
+        <a href="./cookie-standsales.html">Sales</a> 
+        <a href="./cookie-standhome.html">Home</a>
       
       </div>
 <!--       
@@ -51,8 +51,6 @@
         
     </style>
     <table id="jsTbl">
-    
-
         <tr>
             <th></th>
             <th class="TimesandCookies">6am</th>
@@ -69,10 +67,18 @@
             <th class="TimesandCookies">5pm</th>
             <th class="TimesandCookies">6pm</th>
             <th class="TimesandCookies">7pm</th>
-            <th class="TimesandCookies">Total</th>
-
 
         </tr>
+        <tfoot class="TimesandCookies">
+            <tr>
+                <th>
+                Totals:
+                </th>
+            </tr>
+        </tfoot>
+
+    </table>
+
         <form id="AddLocation" method="POST">
             <legend>Add Location</legend>
             <fieldset>
@@ -89,8 +95,10 @@
 
                 
         </form>
+       
 
-    </table>
+
+    
  <script src="cookie-stand.js"></script>
 
 </body>

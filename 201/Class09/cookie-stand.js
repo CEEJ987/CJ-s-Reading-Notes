@@ -301,30 +301,28 @@
  Lima.getCookies();
  Lima.render();
  locations.push(Lima);
+
+ updateTotals ();
  
  
-let trow = document.createElement('tr');
-let hourlytotals = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+/*let hourlytotals = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 let storetotals = [];
 
-// Create table cells for the hourly totals row
-let hourlytotalstext = document.createElement('td');
-hourlytotalstext.innerHTML = "Totals";
-trow.insertBefore(hourlytotalstext, trow.firstChild);
+//trow.insertBefore(hourlytotalstext, trow.firstChild);
 for (let i = 0; i < hoursDemo.length; i++) {
   let tdtotals = document.createElement('td');
   tdtotals.innerHTML = hourlytotals[i];
-  trow.append(tdtotals);
 }
 
 // Append the row to the table
 let table = document.getElementById('jsTbl');
-table.append(trow);
+table.append(trow);*/
 
 function updateTotals() {
   // Reset the hourly totals array and store totals array
   let hourlytotals = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   let storetotals = [];
+  let trow = document.querySelector('tfoot tr');
 
   // Update the store totals and hourly totals arrays
   for (let i = 0; i < locations.length; i++) {
@@ -332,13 +330,24 @@ function updateTotals() {
     for (let j = 0; j < locations[i].cookiesPerHour.length; j++){
       storetotals[i] += locations[i].cookiesPerHour[j];
       hourlytotals[j] += locations[i].cookiesPerHour[j];
+      console.log(`${i} times thru: hourly totals [${j}]: `, hourlytotals[j]);
     }
   }
 
   // Update the table with the new totals
   for (let i = 0; i < hoursDemo.length; i++) {
-    let tdtotals = trow.children[i+1];
+    let tdtotals = undefined;
+    if (trow.childElementCount > 14) {
+        tdtotals = trow.children[i+1]
+    } 
+    else {
+        tdtotals = document.createElement('td')
+    }
+    console.log(trow.childElementCount)
+    //let tdtotals = document.createElement('td')//trow.children[i+1];
     tdtotals.innerHTML = hourlytotals[i];
+    trow.append(tdtotals);
+
   }
 }
 
@@ -357,5 +366,6 @@ AddLocation.addEventListener('submit', function (event) {
   AddLocation.reset();
   locations.push(NewLocation);
   updateTotals();
-  AddLocation.append(updateTotals);
+
+
 });
