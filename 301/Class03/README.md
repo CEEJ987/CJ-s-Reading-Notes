@@ -1,4 +1,4 @@
-# Reading Notes Class 02
+# Reading Notes Class 03
 
 ## Questions
 
